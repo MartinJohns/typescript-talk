@@ -270,7 +270,7 @@ log(`Id: ${milkWithNewId.id}, name: ${milkWithNewId.name}`);
 // by using a function that may return undefined.
 const whoopsieMilk: Product = merge(originalMilk, { id: undefined, name: oneOf('Law fat milk', undefined) });
 log(`Id: ${whoopsieMilk.id}, name: ${whoopsieMilk.name}`);
-// Even tho our id property is of type number, it suddenly has
+// Even though our id property is of type number, it suddenly has
 // a value of undefined, and the name property potentially too
 // depending on the return value of the function call.
 // This wouldn't have happened with Pick, because Pick does not

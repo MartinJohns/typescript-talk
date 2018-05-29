@@ -41,8 +41,8 @@ log(countryMap['dk'].name);
 const shouldBeFrance: Country = countryMap['fr'];
 log(shouldBeFrance === undefined ? '<missing>' : shouldBeFrance.name);
 
-// This was a design decision by the TypeScript team, as commonly
-// a indexers are used with known keys only, and the effort for the
+// This was a design decision by the TypeScript team, as indexers are
+// commonly used with known keys only, and the effort for the
 // developer to always check for undefined when using an indexer
 // was deemed too high. There's an open issue to at least introduce
 // a compiler flag to enable such behavior: #13778

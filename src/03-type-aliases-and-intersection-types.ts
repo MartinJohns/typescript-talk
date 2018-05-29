@@ -3,7 +3,7 @@ import { log } from './utils';
 // Type aliases give types a name for reference.
 // Type aliases can be added for...
 
-/* Object definitions */ type SonmeObject = { data: string; }
+/* Object definitions */ type SomeObject = { data: string; }
 /* Primitive types */    type Name = string;
 /* Functions */          type NameResolver = () => Name;
 /* Union types */        type NameOrNameResolver = Name | NameResolver;
@@ -31,7 +31,7 @@ function getNameAwesomely(nameOrResolver: NameOrNameResolver): Name {
 // From the TypeScript spec:
 // "An interface can be named in an extends or implements clause, but a type alias for an object type literal cannot."
 // This was changed in TypeScript 2.2 via #13604, but the spec is not updated yet.
-interface ExtendedObject extends SonmeObject {
+interface ExtendedObject extends SomeObject {
     extended: string; // Works in TypeScript 2.2+
 }
 
