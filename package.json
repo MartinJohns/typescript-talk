@@ -11,7 +11,7 @@
   "license": "MIT",
   "homepage": "https://github.com/MartinJohns/typescript-talk#readme",
   "devDependencies": {
-    "ts-node": "^6.0.5",
-    "typescript": "^2.8.3"
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3"
   }
 }
