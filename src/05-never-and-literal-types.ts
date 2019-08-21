@@ -99,6 +99,11 @@ if (value === 'name') {
 // ⚠️ better approach below ⚠️
 demo1(value as 'name');
 
+// Using const-contexts (TypeScript 3.4 - March 2019) we can infer the literal type.
+const valueInferred = 'name'; // Type is string
+const valueConst = 'name' as const; // Type is 'name'.
+// Not to confuse with type-assertiosn (casts). 'const' is a special keyword.
+
 
 // Combining literal types and union types is a great way to define
 // a list of possible values.
