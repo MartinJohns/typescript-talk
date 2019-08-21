@@ -74,6 +74,19 @@ if (isBird(pet)) {
     // it's NOT a bird, and not that it IS a fish.
 }
 
+// Sneak-peek TypeScript 3.7:
+// Assertions in control flow analysis (https://github.com/microsoft/TypeScript/pull/32695)
+// function assertIsFish(pet: Fish | Bird): asserts pet is Fish {
+//     if (!isFish(pet)) {
+//         throw new Error('Pet is expected to be a fish!');
+//     }
+// }
+
+// assertIsFish(pet);
+// pet; // pet is now typed Fish, no need for a nested code block anymore.
+//      // The "asserts <condition>" tells the compiler that this function makes sure the condition is true,
+//      // otherwise the method will not return (throws an Error).
+
 
 // Alternative approach: in-operator
 // The in-operator checks if a member with a specific name is present
