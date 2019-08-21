@@ -92,7 +92,7 @@ if ('fly' in pet) {
 
 // Some dummy code
 interface Padder {}
-class FirstPadder implements Padder {}
+class FirstPadder implements Padder { first: number = 1; }
 class SecondPadder implements Padder {}
 function getPadder(): Padder {
     return oneOf(
@@ -109,6 +109,18 @@ if (padder instanceof FirstPadder) {
     log('Is second patter');
 }
 
+// Issue: Object literals are implicitly assignable to classes without private variables,
+// but they lack the prototype-chain and instanceof fails.
+const firstPadder: FirstPadder = { first: 123 };
+if (firstPadder instanceof FirstPadder) {
+    // Logically this should always be true,
+    // but it will actuall always fail.
+    
+    // So when using classes, it's best to always have a private property.
+    // This makes the class nominal typed, instead of structural typed.
+} else {
+    firstPadder; // type is never (see chapter 5)
+}
 
 // What about shared members with different types?
 interface First {
